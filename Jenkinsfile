@@ -8,7 +8,6 @@ pipeline {
     parameters {
       string defaultValue: 'main', description: 'Chose branch to build and deploy', name: 'branchName'
     }
-
     stages {
         stage("Git Checkout"){
             when {
@@ -32,7 +31,6 @@ pipeline {
             
             }
         }
-      
         stage("Dev Deploy"){
             when {
                 expression{
