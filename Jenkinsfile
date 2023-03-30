@@ -1,5 +1,4 @@
 pipeline {
-    
     agent any    
     environment {
       TOMCAT_DEV = "172.31.49.161"
@@ -19,7 +18,6 @@ pipeline {
                 git branch: "${params.branchName}", credentialsId: 'github', url: 'https://github.com/javahometech/hr-api'
             }
         }
-    
         stage('Maven Build') {
             when {
                 expression{
