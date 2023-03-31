@@ -9,8 +9,10 @@
       font-family: Arial, Calibri, Tahoma;
     }
     h2{
-      background-colour:orange;
-      color:white;
+      padding: 5px 10px;
+      color: #ece0e0;
+      background-color: #d83b06;
+      display: inline-block;
     }
     
   </style>
