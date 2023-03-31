@@ -10,7 +10,7 @@
     }
     h2{
       padding: 5px 10px;
-      color: #ece0e0;
+      color: #f4efef !important;
       background-color: #d83b06;
       display: inline-block;
     }
