@@ -1,8 +1,18 @@
 <html>
   <style>
-    p {
-     left-padding:20px;
+     p {
+      left-padding: 20px;
+      display: block;
+      margin-left: 20px;
+      margin-right: 20px;
+      text-align: justify;
+      font-family: Arial, Calibri, Tahoma;
     }
+    h2{
+      background-colour:orange;
+      color:white;
+    }
+    
   </style>
 <body>
 <h2 style='color: black'>Java Home Pipeline CI/CD!</h2>
