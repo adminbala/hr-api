@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-//         stage('Git-Checkout') {
-//             steps {
-//                 git branch: 'main', credentialsId: 'crds', url: 'https://github.com/benoynsreedhar/hr-api'
-//             }
-//         }
+        stage('Git-Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'crds', url: 'https://github.com/benoynsreedhar/hr-api'
+             }
+        }
         stage('Maven-Build') {
             steps {
                 sh 'mvn clean package'
