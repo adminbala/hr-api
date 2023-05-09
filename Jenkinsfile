@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                echo "${params.branchname}"
-               git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
+               git branch: "${params.branchname}", credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
             }
         }
         stage('maven build') {
