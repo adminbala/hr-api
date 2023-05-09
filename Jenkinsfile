@@ -1,30 +1,27 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('Git-Checkout') {
+        stage('git checkout') {
             steps {
-                git branch: 'main', credentialsId: 'crds', url: 'https://github.com/benoynsreedhar/hr-api'
-             }
+                git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
+            }
         }
-        stage('Maven-Build') {
+        stage('maven build') {
             steps {
                 sh 'mvn clean package'
             }
-        }
-        stage('Tomcat-Deploy') {
+        }   
+        stage('tomcat deploy - dev') {
             steps {
-                sshagent(['tomcat-creds']) {
-                    sh"scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.89.251:/opt/tomcat9/webapps"
-                    sh"ssh ec2-user@172.31.89.251 /opt/tomcat9/bin/shutdown.sh"
-                    sh"ssh ec2-user@172.31.89.251 /opt/tomcat9/bin/startup.sh"
-               }
+                sshagent(['tomcat-dev']) {
+                    sh "scp -o StrictHostKeyChecking=no target/hr-api.war ec2-user@172.31.37.102:/opt/tomcat9/webapps/ "
+                    sh "ssh ec2-user@172.31.37.102 /opt/tomcat9/bin/shutdown.sh"
+                    sh "ssh ec2-user@172.31.37.102 /opt/tomcat9/bin/startup.sh"
+                    
+                }
             }
-        }
+        } 
     }
-    post {
-          always {
-            cleanWs()
-          }
-        }
 }
+
