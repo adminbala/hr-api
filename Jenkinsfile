@@ -25,7 +25,7 @@ pipeline {
         }   
         stage('tomcat deploy - dev') {
             steps {
-               TomcatDeploy()
+               tomcatDeploy()
             }
         } 
     }
