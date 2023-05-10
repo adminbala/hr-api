@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage('git checkout') {
-            echo "${params}"
             steps {
+                 echo "${params}"
                 git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
             }
         }
