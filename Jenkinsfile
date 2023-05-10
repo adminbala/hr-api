@@ -1,4 +1,4 @@
-@library('jhc') _
+@Library('jhc') _
 pipeline {
     agent any
 
