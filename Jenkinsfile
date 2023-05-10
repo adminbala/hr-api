@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-       stage('git checkout') {
-            steps {
-                git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
-            }
+//    stages {
+//       stage('git checkout') {
+//            steps {
+//                git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
+//            }
         }
         stage('maven build') {
             steps {
