@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     stages {
-       stage('git checkout') {
+        stage('git checkout') {
+            echo "${params}"
             steps {
                 git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
             }
