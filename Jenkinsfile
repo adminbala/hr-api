@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-//    stages {
+    stages {
 //       stage('git checkout') {
 //            steps {
 //                git branch: 'main', credentialsId: 'git-tocken', url: 'https://github.com/adminbala/hr-api'
 //            }
-        }
+//        }
         stage('maven build') {
             steps {
                 sh 'mvn clean package'
