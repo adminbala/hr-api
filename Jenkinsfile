@@ -1,4 +1,4 @@
-@Library('jhc') _
+@library('jhc') _
 pipeline {
     agent any
 
@@ -25,7 +25,7 @@ pipeline {
         }   
         stage('tomcat deploy - dev') {
             steps {
-               tomcatdeploy()
+               TomcatDeploy()
             }
         } 
     }
